@@ -14,12 +14,15 @@ $(".btn").on("click", function() {
 });
 
 $("#start-btn").on("click", function() {
-    if (!started) {
-        nextSequence();
-        $("#level-title").text("Level " + level);
-        started = true;
-    }
-    
+
+    setTimeout(function() {
+        if (!started) {
+            nextSequence();
+            $("#level-title").text("Level " + level);
+            started = true;
+        }
+    }, 500);
+
 })
 
 $(document).on("keydown", function(event) {
