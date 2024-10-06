@@ -13,9 +13,17 @@ $(".btn").on("click", function() {
     checkAnswer(userClickedPattern.length-1);
 });
 
+$("#start-btn").on("click", function() {
+    if (!started) {
+        nextSequence();
+        $("#level-title").text("Level " + level);
+        started = true;
+    }
+    
+})
+
 $(document).on("keydown", function(event) {
     // console.log(event.key);
-
     if (!started) {
         nextSequence();
         $("#level-title").text("Level " + level);
